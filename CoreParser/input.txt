@@ -1,0 +1,7 @@
+Leaf = Pack{1,1};
+Node = Pack{2,3};
+
+depth t = case t of
+           <1> _ -> 0;
+           <2> t1 _ t2 -> let bigger = \ x y . max x y 
+                           in 1 + bigger (depth t1) (depth t2)
